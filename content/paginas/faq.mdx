@@ -1,0 +1,101 @@
+---
+title: FAQ
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# FAQ (perguntas frequentes)
+
+O tema monta a seção de perguntas frequentes da página inicial **a partir de uma página de conteúdo chamada `FAQ`**. A Beep entrega um modelo pronto: você só cola e troca as perguntas e respostas.
+
+<Steps>
+
+### Crie a página de conteúdo
+
+Em **Loja Integrada → Páginas de conteúdo**, crie uma nova página com o título exatamente **`FAQ`**.
+
+### Abra o código-fonte do editor
+
+No editor da página, clique no botão **Código-fonte**.
+
+### Cole o modelo
+
+Apague o que estiver lá e cole o [modelo](#modelo) abaixo.
+
+### Troque as perguntas e respostas
+
+Volte ao modo visual e edite apenas os textos: o título da seção, cada pergunta e cada resposta. Para mais perguntas, veja [Adicionar perguntas](#adicionar-perguntas).
+
+### Salve
+
+A seção aparece na página inicial, antes do rodapé.
+
+</Steps>
+
+## Modelo
+
+Copie o modelo inteiro e cole no código-fonte da página. Os textos em _lorem ipsum_ são para você trocar.
+
+```html filename="Modelo FAQ"
+<div class="container">
+<h2 style="text-align: center;">Dúvidas Frequentes</h2>
+
+<div class="accordion">
+<div class="accordion-item"><button aria-expanded="false" id="accordion-button-1">Lorem ipsum dolor sit amet?</button>
+<div class="accordion-content">
+<p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</div>
+
+<div class="accordion-item"><button aria-expanded="false" id="accordion-button-2">Ut enim ad minim veniam?</button>
+<div class="accordion-content">
+<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+
+<div class="accordion-item"><button aria-expanded="false" id="accordion-button-3">Duis aute irure dolor in reprehenderit?</button>
+<div class="accordion-content">
+<p>In voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+</div>
+</div>
+</div>
+</div>
+```
+
+## Como o modelo é montado
+
+| Parte | O que é | Pode editar? |
+| --- | --- | --- |
+| `<h2>` | Título da seção ("Dúvidas Frequentes") | Sim, o texto |
+| `<button>` | A pergunta — o cliente clica para abrir | Sim, o texto |
+| `<div class="accordion-content">` | A resposta, que abre ao clicar na pergunta | Sim, o texto |
+| `class`, `id`, `aria-expanded` | O que o tema usa para montar o acordeão | **Não** |
+
+## Adicionar perguntas
+
+No código-fonte, copie um bloco `accordion-item` inteiro (do `<div class="accordion-item">` até o `</div>` que o fecha) e cole logo depois do último. Depois:
+
+1. Troque o número do `id` para o próximo da sequência (`accordion-button-4`, `accordion-button-5`…). **Cada pergunta precisa de um número diferente.**
+2. Volte ao modo visual e escreva a pergunta e a resposta.
+
+```html filename="Bloco de uma pergunta"
+<div class="accordion-item"><button aria-expanded="false" id="accordion-button-4">Nova pergunta?</button>
+<div class="accordion-content">
+<p>Nova resposta.</p>
+</div>
+</div>
+```
+
+<Callout type="info">
+  Se a página `FAQ` não existir, a seção simplesmente não aparece na loja.
+</Callout>
+
+<Callout type="default">
+  Ao salvar, o editor da Loja Integrada pode colocar sozinho alguns `<span style="white-space: pre-wrap;">` em volta dos textos. É normal e não atrapalha.
+</Callout>
+
+## Erros comuns
+
+- Título da página diferente de `FAQ` (ex.: "Perguntas frequentes") → o tema não encontra a página.
+- Apagar ou mudar `class` no código-fonte → o acordeão quebra. Edite só os textos, no modo visual.
+- Duas perguntas com o mesmo `id` → uma delas pode não abrir.

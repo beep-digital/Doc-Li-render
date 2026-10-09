@@ -1,0 +1,32 @@
+/* Identidade Beep Theme — cor principal #ff4a9d */
+:root {
+  --beep-primary: #ff4a9d;
+}
+
+/* Títulos de página e de seção na cor principal */
+article h1,
+article h2 {
+  color: var(--beep-primary) !important;
+}
+
+/* Logo da navbar */
+.beep-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.beep-logo img {
+  height: 32px;
+  width: auto;
+}
+.beep-logo span {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Prints do painel */
+.print-painel {
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
