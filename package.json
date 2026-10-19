@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "description": "Documentação do tema Beep para o novo renderizador da Loja Integrada (Nextra)",
-  "engines": {
-    "node": "22.x"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "postbuild": "node scripts/pagefind.mjs",
     "start": "next start"
   },
   "dependencies": {
