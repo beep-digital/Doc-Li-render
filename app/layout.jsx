@@ -11,7 +11,7 @@ export const metadata = {
   icons: { icon: '/logo-beep-theme.svg' }
 }
 
-// #ff4a9d em HSL = 332°, 100%, 64%
+// #ff4a9d em HSL = 332°, 100%, 64% 
 const primaryColor = { hue: 332, saturation: 100, lightness: { light: 64, dark: 64 } }
 
 const banner = (
