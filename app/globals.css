@@ -1,32 +1,370 @@
-/* Identidade Beep Theme — cor principal #ff4a9d */
+/* Identidade Beep (manual de marca v1): paper, ink, sinal.
+   Fonte dos fatos: knowledge/marca/identidade.md no repositório protocol. */
 :root {
-  --beep-primary: #ff4a9d;
+  --ink: #14161a;
+  --paper: #f6f4ef;
+  --graphite: #24272c;
+  --sand: #e9e5dc;
+  --sinal: #1bd47e;
+  --sinal-texto: #0a7344;
+  --white: #ffffff;
+  --muted: #5b5f66;
+  --muted-dark: #b9bcc2;
+  --line: #d9d4c8;
+  --line-dark: #34383f;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --radius: 12px;
+
+  /* Fontes do Nextra apontam para as da marca (carregadas em app/layout.jsx) */
+  --x-font-sans: var(--font-beep-sans), ui-sans-serif, system-ui, sans-serif;
+  --x-font-mono: var(--font-beep-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Tokens que mudam com o tema claro/escuro */
+  --c-texto: var(--ink);
+  --c-apoio: var(--muted);
+  --c-linha: var(--line);
+  --c-cartao: var(--white);
+  --c-painel: var(--graphite);
+}
+.dark {
+  --c-texto: #f3f1ec;
+  --c-apoio: var(--muted-dark);
+  --c-linha: var(--line-dark);
+  --c-cartao: var(--graphite);
+  --c-painel: #1c1f23;
 }
 
-/* Títulos de página e de seção na cor principal */
-article h1,
-article h2 {
-  color: var(--beep-primary) !important;
+body {
+  font-family: var(--x-font-sans);
 }
 
-/* Logo da navbar */
+/* ---------- Títulos dos manuais ---------- */
+article h1 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--c-texto);
+}
+article h2,
+article h3 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--c-texto);
+}
+/* O h1 de cada página ganha o ponto aceso no fim, como no logo */
+article h1:not(.central__titulo)::after {
+  content: '';
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.12em;
+  border-radius: 50%;
+  background: var(--sinal);
+  vertical-align: 0.62em;
+}
+
+/* ---------- Logo (texto + ponto, nunca imagem) ---------- */
+.beep-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 .beep-logo {
-  display: flex;
+  display: inline-flex;
+  align-items: flex-start;
+  font: 600 26px/1 var(--x-font-sans);
+  letter-spacing: -0.04em;
+  color: var(--c-texto);
+}
+.beep-dot {
+  width: 0.24em;
+  height: 0.24em;
+  margin: 0.06em 0 0 0.08em;
+  border-radius: 50%;
+  background: var(--sinal);
+}
+.beep-marca__nome {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--c-linha);
+  font: 500 12px/1 var(--x-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-apoio);
+}
+@media (max-width: 640px) {
+  .beep-marca__nome {
+    display: none;
+  }
+}
+
+/* ---------- Seletor de tema na navbar ---------- */
+.seletor-tema {
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
-.beep-logo img {
-  height: 32px;
-  width: auto;
+.seletor-tema__rotulo {
+  font: 500 12px/1 var(--x-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-apoio);
 }
-.beep-logo span {
-  font-weight: 600;
-  opacity: 0.8;
+.seletor-tema select {
+  appearance: none;
+  max-width: 15rem;
+  padding: 0.4rem 2rem 0.4rem 0.75rem;
+  border: 1px solid var(--c-linha);
+  border-radius: 8px;
+  background-color: var(--c-cartao);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%235B5F66' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+  color: var(--c-texto);
+  font: 500 14px/1.3 var(--x-font-sans);
+  cursor: pointer;
+}
+.seletor-tema select:hover {
+  border-color: var(--c-apoio);
+}
+.seletor-tema select:focus-visible {
+  outline: 2px solid var(--sinal-texto);
+  outline-offset: 2px;
+}
+.dark .seletor-tema select:focus-visible {
+  outline-color: var(--sinal);
+}
+@media (max-width: 640px) {
+  .seletor-tema__rotulo {
+    display: none;
+  }
+  .seletor-tema select {
+    max-width: 9.5rem;
+    font-size: 13px;
+  }
 }
 
-/* Prints do painel */
+/* ---------- Callouts ----------
+   A marca não usa azul: o callout "info" vira sand com texto ink.
+   O "warning" fica com o amarelo do Nextra, que sinaliza atenção. */
+.nextra-callout {
+  border-radius: var(--radius);
+}
+.nextra-callout[class*='x:bg-blue-100'] {
+  background: var(--sand);
+  border-color: var(--line);
+  color: var(--ink);
+}
+.dark .nextra-callout[class*='x:bg-blue-100'] {
+  background: var(--graphite);
+  border-color: var(--line-dark);
+  color: #f3f1ec;
+}
+.nextra-callout[class*='x:bg-blue-100'] a {
+  color: var(--sinal-texto);
+}
+.dark .nextra-callout[class*='x:bg-blue-100'] a {
+  color: var(--sinal);
+}
+
+/* ---------- Sidebar: item ativo em sand, sem verde de fundo ---------- */
+a[class*='x:bg-primary-100 x:font-semibold'] {
+  background: var(--sand);
+  color: var(--ink);
+}
+.dark a[class*='x:bg-primary-100 x:font-semibold'] {
+  background: var(--graphite);
+  color: #f3f1ec;
+}
+
+/* ---------- Prints do painel em moldura ---------- */
+article img {
+  border: 1px solid var(--c-linha);
+  border-radius: var(--radius);
+  background: var(--white);
+}
 .print-painel {
-  border: 1px solid rgba(127, 127, 127, 0.25);
-  border-radius: 8px;
   margin-top: 1rem;
+}
+
+/* ---------- Rótulo de status (ponto + mono caixa alta) ---------- */
+.rotulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font: 500 12px/1.3 var(--x-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-apoio);
+}
+.rotulo__ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  border: 1.5px solid currentColor;
+}
+.rotulo--apagado .rotulo__ponto {
+  background: transparent;
+}
+
+/* ---------- Home da central ---------- */
+.central {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) clamp(4px, 2vw, 16px) clamp(48px, 8vw, 96px);
+  color: var(--c-texto);
+}
+.central__topo {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: stretch;
+  padding-bottom: clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid var(--c-linha);
+}
+.central__texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.central__titulo {
+  margin: 0;
+  font: 600 clamp(36px, 5.5vw, 60px) / 1.05 var(--x-font-sans);
+  letter-spacing: -0.03em;
+  color: var(--c-texto);
+}
+.central__sub {
+  margin: 0;
+  max-width: 34rem;
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.6;
+  color: var(--c-apoio);
+}
+.central__painel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  border-radius: var(--radius);
+  background: var(--c-painel);
+}
+.grade {
+  display: grid;
+  grid-template-columns: repeat(var(--colunas), 10px);
+  gap: clamp(14px, 2.2vw, 22px);
+}
+.grade__ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3a3e45;
+  animation: ponto-surge 600ms var(--ease) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+.grade__ponto--aceso {
+  position: relative;
+  background: var(--sinal);
+}
+.grade__ponto--aceso::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--sinal);
+  opacity: 0;
+  animation: anel 900ms var(--ease) 700ms 1 both;
+}
+@keyframes ponto-surge {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes anel {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grade__ponto,
+  .grade__ponto--aceso::after {
+    animation: none;
+  }
+}
+
+.central__plataforma {
+  padding-top: clamp(36px, 5vw, 56px);
+}
+.rotulo--secao {
+  margin-bottom: 1.25rem;
+}
+.central__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tema-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 24px;
+  border: 1px solid var(--c-linha);
+  border-radius: var(--radius);
+  background: var(--c-cartao);
+  color: var(--c-texto);
+  text-decoration: none;
+  transition:
+    border-color 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+.tema-card:hover {
+  border-color: var(--c-texto);
+  transform: translateY(-2px);
+}
+.tema-card:focus-visible {
+  outline: 2px solid var(--sinal-texto);
+  outline-offset: 3px;
+}
+.tema-card__nome {
+  margin-top: 0.4rem;
+  font: 600 28px/1.15 var(--x-font-sans);
+  letter-spacing: -0.02em;
+}
+.tema-card__desc {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-apoio);
+}
+.tema-card__abrir {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 15px;
+}
+@media (max-width: 760px) {
+  .central__topo {
+    grid-template-columns: 1fr;
+  }
+  .central__painel {
+    min-height: 160px;
+  }
+}
+
+.rodape {
+  font-size: 14px;
+  color: var(--c-apoio);
 }

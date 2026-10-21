@@ -1,16 +1,16 @@
+// Raiz da central. A home não aparece na sidebar; cada plataforma mostra os
+// seus temas direto (display: 'children'), e cada tema é uma "page" isolada.
+const semMoldura = {
+  layout: 'full',
+  sidebar: false,
+  toc: false,
+  breadcrumb: false,
+  pagination: false,
+  copyPage: false,
+  timestamp: false
+}
+
 export default {
-  index: 'Introdução',
-  'primeiros-passos': 'Primeiros passos',
-  '-- configurar': { type: 'separator', title: 'Configurar a loja' },
-  'visual-da-loja': 'Visual da loja',
-  banners: 'Banners',
-  paginas: 'Páginas de conteúdo',
-  recursos: 'Recursos do tema',
-  '-- consulta': { type: 'separator', title: 'Consulta' },
-  'referencia-rapida': 'Referência rápida',
-  'perguntas-frequentes': 'Dúvidas comuns',
-  interno: {
-    title: 'Interno (equipe Beep)',
-    display: 'hidden'
-  }
+  index: { title: 'Início', display: 'hidden', theme: semMoldura },
+  'loja-integrada': { title: 'Loja Integrada', display: 'children' }
 }

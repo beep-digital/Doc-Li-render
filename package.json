@@ -1,8 +1,8 @@
 {
-  "name": "docs-beep-theme-li",
+  "name": "central-temas-beep",
   "version": "0.1.0",
   "private": true,
-  "description": "Documentação do tema Beep para o novo renderizador da Loja Integrada (Nextra)",
+  "description": "Central de Temas Beep: manuais dos temas da Beep para Loja Integrada e Tray (Nextra)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
