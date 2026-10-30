@@ -1,0 +1,77 @@
+---
+title: Ícones do menu
+description: Ícones nas categorias do menu do tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Ícones do menu
+
+Coloca um ícone ao lado de cada categoria no menu do computador. Facilita a navegação do seu cliente.
+
+<Steps>
+
+### Pegue o ID da categoria
+
+No painel da Loja Integrada, abra a categoria em **Produtos** > **Categorias**. O ID é o número no endereço da página. Exemplo: em `https://app.lojaintegrada.com.br/painel/catalogo/categoria/13241412/editar`, o ID é `13241412`.
+
+![Endereço da página de edição da categoria com o ID destacado](/images/loja-integrada/be/icones-menu-id-categoria.webp)
+
+### Suba o ícone com o nome do ID
+
+Vá em **Configurações** > **Gerenciador de arquivos** e suba o ícone com o **nome igual ao ID da categoria**. Exemplo: `13241412.png`. Repita para cada categoria.
+
+![Gerenciador de arquivos com ícones nomeados pelo ID da categoria](/images/loja-integrada/be/icones-menu-gerenciador-de-arquivos.webp)
+
+Não tem os ícones? Você encontra muitos em [flaticon.com/br/icones](https://www.flaticon.com/br/icones). O tamanho indicado é 30x30.
+
+### Anote o ID do gerenciador de arquivos
+
+No Gerenciador de arquivos, todo arquivo tem um endereço que repete sempre o mesmo número. Esse é o ID do seu gerenciador. No exemplo, é `2002`. Anote esse número.
+
+![Endereço dos arquivos com o ID do gerenciador destacado](/images/loja-integrada/be/icones-menu-id-gerenciador.webp)
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Ícones do Menu` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | JavaScript |
+
+### Copie o conteúdo
+
+Abra o código no link abaixo, copie e cole no campo **Conteúdo**:
+
+[https://codepen.io/beepdigital/pen/JjNXoNj?editors=0010](https://codepen.io/beepdigital/pen/JjNXoNj?editors=0010)
+
+### Ajuste o código
+
+No código, troque só o que está **dentro das aspas** (`' '`). Não apague as aspas nem o resto do código.
+
+- `$categoriaIcones_url`: deixe `true`. Para desligar os ícones, troque por `false`.
+- `$formatoCategoria`: o formato dos seus ícones (`svg`, `png` ou `jpg`).
+- `$ID_url_padrao`: troque `2002` pelo ID do seu gerenciador de arquivos.
+
+![Código dos ícones do menu com as três variáveis](/images/loja-integrada/be/icones-menu-codigo.webp)
+
+### Salve
+
+Clique em **Criar código**.
+
+
+</Steps>
+
+{/* TODO: o manual não diz Local publicação, Página publicação e Tipo do código Ícones do Menu. Ficaram os valores usados nos outros códigos do tema. */}
+
+## Ícones nas marcas e no celular
+
+Quer ícones também nas marcas, ou no menu do celular? Crie mais um código para cada um, do mesmo jeito:
+
+| Para | Descrição | Local publicação | Página publicação | Código |
+| --- | --- | --- | --- | --- |
+| Marcas | `Ícones do Menu marcas` | Rodapé | Todas as páginas | [abrir](https://codepen.io/beepdigital/pen/eYGNBPL?editors=0010) |
+| Menu do celular | `Ícones do Menu mobile` | Rodapé | Todas as páginas | [abrir](https://codepen.io/beepdigital/pen/poWPZGm?editors=0010) |

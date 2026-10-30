@@ -1,0 +1,48 @@
+---
+title: Descrição da loja no rodapé
+description: Texto Sobre nós no rodapé do tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Descrição da loja no rodapé
+
+Mostra um texto **Sobre nós** no rodapé, com a descrição da sua loja.
+
+<Steps>
+
+### Preencha a descrição da loja
+
+No painel da Loja Integrada, vá em **Configurações** > **Dados da loja** e preencha o campo **Descrição da sua loja**. Salve.
+
+![Tela Dados da loja com o campo Descrição da sua loja](/images/loja-integrada/be/descricao-da-loja.webp)
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Logo no rodapé` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | JavaScript |
+
+### Copie o conteúdo
+
+Copie o código abaixo e cole no campo **Conteúdo**:
+
+```js
+$logoFundo = 'ativo';
+```
+
+### Salve
+
+Clique em **Criar código**.
+
+
+</Steps>
+
+<Callout type="info">
+  A descrição da loja também é usada pelo [botão Saiba mais](/loja-integrada/be/funcionalidades/botao-saiba-mais).
+</Callout>

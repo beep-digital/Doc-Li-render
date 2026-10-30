@@ -1,0 +1,46 @@
+---
+title: Formas de envio no rodapé
+description: Formas de envio no rodapé do tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Formas de envio no rodapé
+
+Mostra as formas de envio da loja no rodapé.
+
+<Steps>
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Formas de envio no rodapé` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | JavaScript |
+
+### Copie o conteúdo
+
+Copie o código abaixo e cole no campo **Conteúdo**:
+
+```js
+$seloFormadeEnvio = `
+<li>
+    <img src="https://cdn.awsli.com.br/1925/1925319/arquivos/sedex.png">
+</li>
+`;
+```
+
+### Coloque as suas formas de envio
+
+Cada forma de envio é um bloco `<li>` com a imagem do selo. Troque o link da imagem pelo link do selo da sua forma de envio (suba a imagem antes no **Gerenciador de arquivos**). Para mostrar mais de uma, repita o bloco `<li>...</li>`, um para cada forma de envio, sempre antes da crase final.
+
+### Salve
+
+Clique em **Criar código**.
+
+
+</Steps>

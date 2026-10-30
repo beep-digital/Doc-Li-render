@@ -47,6 +47,8 @@ export function toPublicUrl(relPath) {
   p = p.replace(/\.html$/, '')
   const segments = p.split('/').filter(Boolean)
   if (segments.some((s) => IGNORED.has(s) || s.startsWith('_') || s.startsWith('['))) return null
+  // Páginas internas da equipe (pendências) ficam fora da busca
+  if (segments.includes('interno')) return null
   if (segments[segments.length - 1] === 'index') segments.pop()
 
   return '/' + segments.join('/')

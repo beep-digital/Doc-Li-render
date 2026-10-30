@@ -4,12 +4,13 @@
 
 export const SITE_NAME = 'Central de Temas Beep'
 export const SITE_DESCRIPTION =
-  'Manuais dos temas da Beep para Loja Integrada e Tray: instalação, configuração e dúvidas comuns.'
+  'Manuais dos temas da Beep para Loja Integrada, Tray e WBuy: instalação, configuração e dúvidas comuns.'
 
 // Nome de exibição de cada plataforma. A chave é a pasta em content/.
 export const PLATAFORMAS = {
   'loja-integrada': 'Loja Integrada',
-  tray: 'Tray'
+  tray: 'Tray',
+  wbuy: 'WBuy'
 }
 
 // status: 'disponivel' (manual completo) ou 'em-construcao' (manual sendo escrito)
@@ -27,6 +28,69 @@ export const TEMAS = [
     nome: 'Royal',
     status: 'disponivel',
     descricao: 'Tema configurado pelo painel Beep Theme e aplicado na loja com um código HTML.'
+  },
+  {
+    plataforma: 'loja-integrada',
+    slug: 'top-store',
+    nome: 'Top Store',
+    status: 'disponivel',
+    descricao: 'Tema configurado pelo painel Beep Theme e aplicado na loja com um código HTML.'
+  },
+  {
+    plataforma: 'loja-integrada',
+    slug: 'be',
+    nome: 'Linha Be',
+    status: 'disponivel',
+    descricao: 'Tema instalado com códigos colados no Incluir código HTML da Loja Integrada, um para cada funcionalidade.'
+  },
+  {
+    plataforma: 'loja-integrada',
+    slug: 'evo',
+    nome: 'EVO',
+    status: 'em-construcao',
+    descricao: 'Tema configurado no painel da Beep com um token e aplicado na loja com um código HTML.'
+  },
+  {
+    plataforma: 'tray',
+    slug: 'be',
+    nome: 'Be',
+    status: 'disponivel',
+    descricao: 'Tema configurado pelo painel da Beep dentro da Tray: cores, banners, layout e recursos complementares.'
+  },
+  {
+    plataforma: 'tray',
+    slug: 'royal',
+    nome: 'Royal',
+    status: 'em-construcao',
+    descricao: 'Tema configurado pelo painel da Beep dentro da Tray, com blog, depoimentos, timer de categoria e Instagram na home.'
+  },
+  {
+    plataforma: 'tray',
+    slug: 'pro',
+    nome: 'Pro',
+    status: 'em-construcao',
+    descricao: 'Tema configurado pelo painel da Beep dentro da Tray, com melhores categorias e melhores escolhas na home.'
+  },
+  {
+    plataforma: 'tray',
+    slug: 'top-store',
+    nome: 'Top Store',
+    status: 'em-construcao',
+    descricao: 'Tema configurado pelo painel da Beep dentro da Tray: logo, cores e banners com tamanhos e gabarito.'
+  },
+  {
+    plataforma: 'tray',
+    slug: 'essential',
+    nome: 'Essential',
+    status: 'em-construcao',
+    descricao: 'Tema configurado pelo painel da Beep dentro da Tray, com avisos de maior idade e cookies, blog, depoimentos e YouTube na home.'
+  },
+  {
+    plataforma: 'wbuy',
+    slug: 'top-store',
+    nome: 'Top Store',
+    status: 'em-construcao',
+    descricao: 'Tema configurado pelo próprio painel da WBuy: banners, tarjas e redes sociais em Marketing, cores e fontes em Temas.'
   }
 ]
 

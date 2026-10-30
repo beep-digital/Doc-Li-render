@@ -1,0 +1,54 @@
+---
+title: Títulos e textos alteráveis
+description: Como mudar títulos e textos do tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Títulos e textos alteráveis
+
+Permite mudar os títulos das vitrines da loja.
+
+<Steps>
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Títulos e textos alteráveis` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | JavaScript |
+
+### Copie o conteúdo
+
+Copie o código abaixo e cole no campo **Conteúdo**:
+
+```js
+// labels
+$Label_lancamentos = 'Lançamentos do dia';   // titulo da vitrine home
+$Label_MaisVendido = 'Mais Vendidos da semana'; // titulo da vitrine home
+$Label_destaque = 'Os melhores Produtos'; // titulo da vitrine home
+$Label_Produtos_Relacionados_Pagina_Produto = 'Aproveite também'; // titulo da vitrine dos produtos relacionados
+```
+
+### Escreva os seus títulos
+
+| No código | Onde aparece |
+| --- | --- |
+| `$Label_lancamentos` | Título da vitrine de lançamentos, na página inicial |
+| `$Label_MaisVendido` | Título da vitrine de mais vendidos, na página inicial |
+| `$Label_destaque` | Título da vitrine de destaques, na página inicial |
+| `$Label_Produtos_Relacionados_Pagina_Produto` | Título dos produtos relacionados, na página do produto |
+
+No código, troque só o que está **dentro das aspas** (`' '`). Não apague as aspas nem o resto do código.
+
+### Salve
+
+Clique em **Criar código**.
+
+
+</Steps>
+

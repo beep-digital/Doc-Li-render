@@ -12,5 +12,7 @@ const semMoldura = {
 
 export default {
   index: { title: 'Início', display: 'hidden', theme: semMoldura },
-  'loja-integrada': { title: 'Loja Integrada', display: 'children' }
+  'loja-integrada': { title: 'Loja Integrada', display: 'children' },
+  tray: { title: 'Tray', display: 'children' },
+  wbuy: { title: 'WBuy', display: 'children' }
 }

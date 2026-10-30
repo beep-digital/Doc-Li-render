@@ -1,0 +1,51 @@
+---
+title: Abas na descrição do produto
+description: Descrição do produto separada em abas no tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Abas na descrição do produto
+
+Separa a descrição do produto em abas. Isso é feito em cada produto, no painel da Loja Integrada.
+
+<Steps>
+
+### Abra o código fonte da descrição
+
+Entre no produto. No campo **Descrição do produto**, clique em **Código-Fonte**.
+
+![Editor da descrição do produto com o botão Código-Fonte destacado](/images/loja-integrada/be/tabs-codigo-fonte.webp)
+
+### Cole o modelo
+
+Copie o modelo abaixo e cole dentro do código fonte:
+
+```html
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">TITULO DO TEXTO 1</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">TITULO DO TEXTO 2</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">TITULO DO TEXTO 3</a></li>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active container" id="home">COLOQUE A DESCRIÇÃO DO TEXTO 1</div>
+    <div class="tab-pane container" id="menu1">COLOQUE A DESCRIÇÃO DO TEXTO 2</div>
+    <div class="tab-pane container" id="menu2">COLOQUE A DESCRIÇÃO DO TEXTO 3</div>
+</div>
+```
+
+### Troque os textos
+
+Troque **só** o que está em branco no modelo: o título de cada aba (`TITULO DO TEXTO 1`, `2` e `3`) e a descrição de cada uma (`COLOQUE A DESCRIÇÃO DO TEXTO 1`, `2` e `3`).
+
+![Modelo das abas com os textos a trocar destacados](/images/loja-integrada/be/tabs-codigo-explicacao.webp)
+
+Fica assim:
+
+![Descrição do produto com o modelo das abas preenchido](/images/loja-integrada/be/tabs-exemplo.webp)
+
+### Salve o produto
+
+</Steps>

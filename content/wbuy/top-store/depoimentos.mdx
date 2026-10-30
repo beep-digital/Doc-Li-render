@@ -1,0 +1,38 @@
+---
+title: Depoimentos
+description: Seção de depoimentos da página inicial do tema Top Store, alimentada pelas avaliações da WBuy.
+---
+
+import { Callout } from 'nextra/components'
+
+# Depoimentos
+
+É a seção de depoimentos de clientes na página inicial.
+
+## Onde configurar
+
+No painel da WBuy, vá no menu lateral em **Produtos > Avaliações**.
+
+<Callout type="warning">
+  A seção **só aparece** na loja se houver pelo menos **um depoimento cadastrado** no painel, ou se os depoimentos forem **importados por planilha**.
+</Callout>
+
+## Importar por planilha
+
+A planilha modelo usada pela Beep tem estas colunas, nesta ordem:
+
+| Coluna | O que vai |
+| --- | --- |
+| `produto_id` | Número do produto avaliado |
+| `nome` | Nome de quem avaliou |
+| `email` | E-mail de quem avaliou |
+| `comentario` | O texto do depoimento |
+| `data` | Data da avaliação |
+| `hora` | Hora da avaliação |
+| `nota` | Nota da avaliação |
+
+{/* TODO: o manual não diz em que tela da WBuy a planilha é importada, o formato da data, a escala da nota nem se e-mail é obrigatório. Ver interno/pendencias. */}
+
+<Callout type="info">
+  Mantenha os depoimentos atualizados. Isso passa mais confiança para quem visita a loja.
+</Callout>

@@ -1,0 +1,57 @@
+---
+title: Selo de pagamento via PIX
+description: Selo de PIX na loja, conforme a forma de pagamento, no tema Linha Be.
+---
+
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# Selo de pagamento via PIX
+
+Mostra o selo de pagamento via PIX. Use o código que combina com a forma de pagamento da sua loja.
+
+O código muda conforme a forma de pagamento. Para **Boleto** e **Mercado Pago**, o código está nesta página. Para **PagSeguro**, use o link.
+
+<Tabs items={['Boleto', 'Mercado Pago', 'PagSeguro']}>
+  <Tabs.Tab>
+
+```js
+$(document).ready(function() {$('.parcelas-produto .accordion .accordion-group .accordion-heading img[alt="Boleto Bancário"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" atl="selo pix">');$('.formas .accordion-heading .forma-conteiner.with-discount img[alt="Pague com Boleto Bancário"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" style="width:65px;" atl="selo pix">');$('.gateways-rodape li img[alt="PagHiper"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" style="width:65px;" atl="selo pix">');});
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+```js
+$(document).ready(function() {$('.parcelas-produto .accordion .accordion-group .accordion-heading img[alt="Mercado Pago"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" atl="selo pix">');$('body.pagina-carrinho .formas .accordion-heading .forma-conteiner img[alt="Pague com Mercado Pago"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" style="width:65px;" atl="selo pix">');$('.gateways-rodape li img[alt="Mercado Pago"]').after('<img src="https://cdn.awsli.com.br/910/910263/arquivos/logo-pix.svg" style="width:65px;" atl="selo pix">');});
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Abra o código no link e copie: [https://codepen.io/beepdigital/pen/zYwRPxv](https://codepen.io/beepdigital/pen/zYwRPxv?editors=0010)
+
+  </Tabs.Tab>
+</Tabs>
+
+<Steps>
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Pagamento via PIX` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | JavaScript |
+
+### Cole o código da sua forma de pagamento
+
+Copie o código da sua forma de pagamento, acima, e cole no campo **Conteúdo**. Não precisa mudar nada.
+
+### Salve
+
+Clique em **Criar código**.
+
+</Steps>

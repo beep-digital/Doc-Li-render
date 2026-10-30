@@ -7,6 +7,7 @@ export default {
   'mini-banners': 'Mini banners',
   'banner-flex': 'Banner flex',
   'banner-single': 'Banner single',
+  'tamanhos-das-imagens': 'Tamanhos das imagens',
   '-- paginas': { type: 'separator', title: 'Vitrines e páginas' },
   vitrine: 'Vitrine',
   'pagina-do-produto': 'Preço e informações do produto',

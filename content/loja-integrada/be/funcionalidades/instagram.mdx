@@ -1,0 +1,103 @@
+---
+title: Instagram
+description: Fotos do Instagram na loja, com o Tagembed, no tema Linha Be.
+---
+
+import { Callout, Steps } from 'nextra/components'
+
+# Instagram
+
+Mostra as fotos do seu Instagram na loja. Para isso, o tema usa uma ferramenta de fora, o **Tagembed**, que tem plano grátis e pago.
+
+## Crie o widget no Tagembed
+
+<Steps>
+
+### Crie uma conta
+
+Entre em [tagembed.com](https://tagembed.com/), clique em **Try for Free** e crie uma conta. Você pode entrar com o Google ou se cadastrar com e-mail.
+
+![Site do Tagembed com o botão Try for Free](/images/loja-integrada/be/instagram-tagembed-site.webp)
+
+![Tela de cadastro do Tagembed](/images/loja-integrada/be/instagram-tagembed-cadastro.webp)
+
+### Crie um widget
+
+No painel do Tagembed, clique em **My Widget**, no menu do lado esquerdo, e depois no botão azul **Create Widget**, no canto de cima.
+
+![Menu My Widget e botão Create Widget](/images/loja-integrada/be/instagram-tagembed-create-widget.webp)
+
+### Dê o nome
+
+Em **Widget Name**, coloque o seu usuário do Instagram e clique em **Create**.
+
+![Campo Widget Name e botão Create Widget](/images/loja-integrada/be/instagram-tagembed-widget-name.webp)
+
+### Escolha o Instagram
+
+Selecione **Instagram**.
+
+![Lista de fontes com a opção do Instagram destacada](/images/loja-integrada/be/instagram-tagembed-instagram-business.webp)
+
+### Conecte a sua conta
+
+Preencha de novo o nome da conta do Instagram. A ferramenta vai pedir para se conectar à sua conta do Facebook: permita.
+
+![Tela Create Instagram Business Feed com o nome da conta](/images/loja-integrada/be/instagram-tagembed-conta.webp)
+
+### Escolha o visual
+
+Com a conta conectada, o Tagembed puxa as suas fotos. Clique em **Personalize**, no lado esquerdo, e escolha o formato que fica melhor na sua loja.
+
+![Menu Personalize do Tagembed](/images/loja-integrada/be/instagram-tagembed-personalize.webp)
+
+![Opções de tema do widget, com Horizontal Carousel destacado](/images/loja-integrada/be/instagram-tagembed-tema.webp)
+
+### Anote o ID do widget
+
+Clique em **Dashboard** > **My Widget** > o nome do Instagram que você criou. No endereço da página, copie o número do final. Exemplo: em `https://app.tagembed.com/wall/index/5742`, o ID é `5742`. Anote esse número.
+
+![Dashboard do Tagembed com o widget criado](/images/loja-integrada/be/instagram-tagembed-id-widget.webp)
+
+</Steps>
+
+## Coloque o código na loja
+
+<Steps>
+
+### Crie um código novo
+
+Siga [Como incluir um código](/loja-integrada/be/como-incluir-um-codigo) e preencha os campos assim:
+
+| Campo | O que colocar |
+| --- | --- |
+| Descrição | `Instagram` |
+| Local publicação | Cabeçalho |
+| Página publicação | Todas as páginas |
+| Tipo | HTML |
+
+### Cole o código
+
+No campo **Conteúdo**, cole o código abaixo:
+
+```html
+<script>
+    $instagramUser = 'beep.digital';
+    $instagramID = '5742';
+    $instagramTexto = "Siga nosso instagram";
+</script>
+```
+
+### Troque pelos seus dados
+
+No código, troque só o que está **dentro das aspas** (`' '`). Não apague as aspas nem o resto do código.
+
+- **`$instagramUser`:** troque `beep.digital` pelo seu usuário do Instagram.
+- **`$instagramID`:** troque `5742` pelo ID do widget que você anotou.
+- **`$instagramTexto`:** o título da seção. Pode deixar como está, se quiser.
+
+### Salve
+
+Clique em **Criar código**.
+
+</Steps>
