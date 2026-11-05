@@ -368,3 +368,253 @@ article img {
   font-size: 14px;
   color: var(--c-apoio);
 }
+
+/* ---------- Criador de FAQ (Fast Store) ----------
+   A prévia imita a loja, que é sempre clara: usa cores fixas, não os tokens
+   claro/escuro do site. Medidas vindas do .faq-cms do tema. */
+.criador-faq {
+  --loja-fundo: var(--sand);
+  --loja-texto: var(--ink);
+  --loja-apoio: var(--muted);
+  --loja-primaria: var(--sinal-texto);
+  margin-top: 1.25rem;
+  border: 1px solid var(--c-linha);
+  border-radius: var(--radius);
+  background: var(--c-cartao);
+  overflow: hidden;
+}
+.criador-faq__barra,
+.criador-faq__rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+.criador-faq__barra {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-linha);
+}
+.criador-faq__rodape {
+  border-top: 1px solid var(--c-linha);
+}
+.criador-faq__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.criador-faq__botao {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--c-linha);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--c-texto);
+  font: 500 14px/1.2 var(--x-font-sans);
+  cursor: pointer;
+}
+.criador-faq__botao:hover {
+  border-color: var(--c-texto);
+}
+.criador-faq__botao[aria-expanded='true'] {
+  background: var(--sand);
+  color: var(--ink);
+}
+.criador-faq__botao--principal {
+  min-width: 9.5rem;
+  border-color: var(--c-texto);
+  background: var(--c-texto);
+  color: var(--c-cartao);
+  font-weight: 600;
+}
+.criador-faq__botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.criador-faq button:focus-visible,
+.criador-faq textarea:focus-visible {
+  outline: 2px solid var(--sinal-texto);
+  outline-offset: 2px;
+}
+.dark .criador-faq__barra button:focus-visible,
+.dark .criador-faq__rodape button:focus-visible,
+.dark .criador-faq__leitura :is(button, textarea):focus-visible {
+  outline-color: var(--sinal);
+}
+.criador-faq__aviso {
+  flex: 1 1 16rem;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--c-apoio);
+}
+.criador-faq__aviso[data-tipo='ok'] {
+  color: var(--sinal-texto);
+  font-weight: 500;
+}
+.dark .criador-faq__aviso[data-tipo='ok'] {
+  color: var(--sinal);
+}
+.criador-faq__aviso[data-tipo='erro'] {
+  color: var(--c-texto);
+  font-weight: 600;
+}
+
+.criador-faq__leitura {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--c-linha);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.criador-faq__leitura textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid var(--c-linha);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--c-texto);
+  font: 13px/1.5 var(--x-font-mono);
+  resize: vertical;
+}
+
+.criador-faq__previa {
+  padding: clamp(16px, 4vw, 32px);
+  background: var(--loja-fundo);
+  color: var(--loja-texto);
+}
+.criador-faq__previa textarea {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  resize: none;
+  overflow: hidden;
+  field-sizing: content;
+}
+.criador-faq__previa textarea::placeholder {
+  color: var(--loja-apoio);
+  opacity: 1;
+}
+.criador-faq__previa textarea.criador-faq__titulo {
+  margin-bottom: 1.25rem;
+  font: 600 28px/1.2 var(--x-font-sans);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.criador-faq__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.criador-faq__linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+}
+.criador-faq__item {
+  flex: 1;
+  min-width: 0;
+  padding: 0 24px;
+  border-radius: 20px;
+  background: var(--white);
+}
+.criador-faq__pergunta {
+  position: relative;
+}
+.criador-faq__previa .criador-faq__pergunta textarea {
+  padding: 16px 40px 16px 0;
+  font: 400 18px/1.4 var(--x-font-sans);
+}
+.criador-faq__previa .criador-faq__pergunta:has(+ textarea) textarea {
+  color: var(--loja-primaria);
+}
+.criador-faq__previa textarea.criador-faq__resposta {
+  padding-bottom: 20px;
+  font: 300 16px/1.55 var(--x-font-sans);
+}
+/* Ícone +/− em CSS puro, como no tema */
+.criador-faq__icone {
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--loja-primaria);
+  cursor: pointer;
+}
+.criador-faq__icone::before,
+.criador-faq__icone::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+.criador-faq__icone::before {
+  width: 10px;
+  height: 2px;
+}
+.criador-faq__icone::after {
+  width: 2px;
+  height: 10px;
+}
+.criador-faq__icone[aria-expanded='true']::after {
+  display: none;
+}
+.criador-faq__remover,
+.criador-faq__adicionar {
+  background: transparent;
+  color: var(--loja-texto);
+  font-family: var(--x-font-sans);
+  cursor: pointer;
+}
+.criador-faq__remover {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  margin-top: 13px;
+  border: 1px solid var(--loja-apoio);
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+}
+.criador-faq__remover:hover:not(:disabled) {
+  border-color: var(--loja-texto);
+  background: var(--white);
+}
+.criador-faq__remover:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.criador-faq__adicionar {
+  width: calc(100% - 42px);
+  margin-top: 10px;
+  padding: 0.85rem;
+  border: 1.5px dashed var(--loja-apoio);
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.criador-faq__adicionar:hover {
+  border-color: var(--loja-texto);
+  background: var(--white);
+}
+@media (max-width: 640px) {
+  .criador-faq__item {
+    padding: 0 18px;
+  }
+  .criador-faq__previa textarea.criador-faq__titulo {
+    font-size: 24px;
+  }
+}
