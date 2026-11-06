@@ -3,28 +3,41 @@ title: FAQ
 ---
 
 import { Callout, Steps } from 'nextra/components'
+import { CriadorDeFaq } from '../../../../components/criador-de-faq'
 
 # FAQ (perguntas frequentes)
 
-O tema monta a seção de perguntas frequentes da página inicial **a partir de uma página de conteúdo chamada `FAQ`**. A Beep entrega um modelo pronto: você só cola e troca as perguntas e respostas.
+O tema monta a seção de perguntas frequentes da página inicial **a partir de uma página de conteúdo chamada `FAQ`**. Monte suas perguntas aqui embaixo e depois é só copiar e colar na sua loja.
+
+## Monte o seu FAQ
+
+As perguntas abaixo são exemplos: **troque pelos prazos e regras reais da sua loja**. Clique em qualquer texto para editar. Use **Adicionar pergunta** para incluir uma nova e o botão **−** ao lado de cada pergunta para remover. O que você escreve fica guardado neste navegador.
+
+<CriadorDeFaq />
+
+## Coloque na sua loja
 
 <Steps>
+
+### Copie o código
+
+Com as perguntas prontas, clique em **Copiar código**, no criador acima.
 
 ### Crie a página de conteúdo
 
 Em **Loja Integrada → Páginas de conteúdo**, crie uma nova página com o título exatamente **`FAQ`**.
 
-### Abra o código-fonte do editor
+### Abra o código-fonte
 
 No editor da página, clique no botão **Código-fonte**.
 
-### Cole o modelo
+### Cole o código
 
-Apague o que estiver lá e cole o [modelo](#modelo) abaixo.
+Apague o que estiver lá e cole o código que você copiou.
 
-### Troque as perguntas e respostas
+### Clique em Código-fonte de novo
 
-Volte ao modo visual e edite apenas os textos: o título da seção, cada pergunta e cada resposta. Para mais perguntas, veja [Adicionar perguntas](#adicionar-perguntas).
+Clique mais uma vez no botão **Código-fonte** para sair do código e ver o FAQ na página.
 
 ### Salve
 
@@ -32,70 +45,37 @@ A seção aparece na página inicial, antes do rodapé.
 
 </Steps>
 
-## Modelo
-
-Copie o modelo inteiro e cole no código-fonte da página. Os textos em _lorem ipsum_ são para você trocar.
-
-```html filename="Modelo FAQ"
-<div class="container">
-<h2 style="text-align: center;">Dúvidas Frequentes</h2>
-
-<div class="accordion">
-<div class="accordion-item"><button aria-expanded="false" id="accordion-button-1">Lorem ipsum dolor sit amet?</button>
-<div class="accordion-content">
-<p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-</div>
-
-<div class="accordion-item"><button aria-expanded="false" id="accordion-button-2">Ut enim ad minim veniam?</button>
-<div class="accordion-content">
-<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-</div>
-
-<div class="accordion-item"><button aria-expanded="false" id="accordion-button-3">Duis aute irure dolor in reprehenderit?</button>
-<div class="accordion-content">
-<p>In voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-</div>
-</div>
-</div>
-</div>
-```
-
-## Como o modelo é montado
-
-| Parte | O que é | Pode editar? |
-| --- | --- | --- |
-| `<h2>` | Título da seção ("Dúvidas Frequentes") | Sim, o texto |
-| `<button>` | A pergunta — o cliente clica para abrir | Sim, o texto |
-| `<div class="accordion-content">` | A resposta, que abre ao clicar na pergunta | Sim, o texto |
-| `class`, `id`, `aria-expanded` | O que o tema usa para montar o acordeão | **Não** |
-
-## Adicionar perguntas
-
-No código-fonte, copie um bloco `accordion-item` inteiro (do `<div class="accordion-item">` até o `</div>` que o fecha) e cole logo depois do último. Depois:
-
-1. Troque o número do `id` para o próximo da sequência (`accordion-button-4`, `accordion-button-5`…). **Cada pergunta precisa de um número diferente.**
-2. Volte ao modo visual e escreva a pergunta e a resposta.
-
-```html filename="Bloco de uma pergunta"
-<div class="accordion-item"><button aria-expanded="false" id="accordion-button-4">Nova pergunta?</button>
-<div class="accordion-content">
-<p>Nova resposta.</p>
-</div>
-</div>
-```
-
 <Callout type="info">
   Se a página `FAQ` não existir, a seção simplesmente não aparece na loja.
 </Callout>
 
-<Callout type="default">
-  Ao salvar, o editor da Loja Integrada pode colocar sozinho alguns `<span style="white-space: pre-wrap;">` em volta dos textos. É normal e não atrapalha.
+## Editar um FAQ que já está na loja
+
+<Steps>
+
+### Copie o que está na loja
+
+Abra a página `FAQ`, clique em **Código-fonte** e copie tudo o que aparecer.
+
+### Monte aqui
+
+No criador acima, clique em **Já tenho FAQ na loja**, cole o conteúdo e clique em **Montar FAQ**. Suas perguntas aparecem prontas para editar.
+
+### Edite e copie
+
+Faça as mudanças e clique em **Copiar código**.
+
+### Devolva para a loja
+
+Na página `FAQ`, clique em **Código-fonte**, apague o que estiver lá e cole o código novo. Clique em **Código-fonte** de novo e salve.
+
+</Steps>
+
+<Callout type="warning">
+  O criador trabalha só com texto. Se as respostas da sua loja têm links, negrito ou listas, eles viram texto simples ao passar por aqui.
 </Callout>
 
 ## Erros comuns
 
-- Título da página diferente de `FAQ` (ex.: "Perguntas frequentes") → o tema não encontra a página.
-- Apagar ou mudar `class` no código-fonte → o acordeão quebra. Edite só os textos, no modo visual.
-- Duas perguntas com o mesmo `id` → uma delas pode não abrir.
+- Título da página diferente de `FAQ` (ex.: "Perguntas frequentes"): o tema não encontra a página.
+- Mudar o código depois de colar: o FAQ pode quebrar. Para mudar algo, volte ao criador, edite e cole de novo.
