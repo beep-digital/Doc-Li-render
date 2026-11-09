@@ -21,6 +21,7 @@ public/images/{plataforma}/{tema}/   prints do manual
 components/
   seletor-de-tema.jsx           select "Tema: X (Plataforma)" na navbar
   home-temas.jsx                home da central
+  criador-de-faq.jsx            criador de FAQ interativo (Fast Store)
 theme.config.js                 SITE_NAME, PLATAFORMAS e a lista TEMAS
 fontes/                         material bruto, não publicado
 ```
@@ -92,6 +93,7 @@ Foi assim com o Royal (21/10/2026):
 - `banners/` tem um arquivo por espaço de banner. `referencia-rapida.mdx` resume tudo numa tabela: **mantenha as duas em sincronia**.
 - Cada página de banner segue: "Onde aparece", tabela (posição, nome, imagem, quantidade), passo a passo, callouts de atenção.
 - Regra central do tema: **o nome decide o lugar; todo texto vai no título do banner, nunca no nome.**
+- FAQ: o lojista não vê HTML. `components/criador-de-faq.jsx` edita na prévia, copia o código e lê o código que já está na loja. O CSS do tema (`.faq-cms`) exige **um único filho** em `.accordion-content`: resposta é sempre um `<p>` só, com `<br>` nas quebras de linha.
 - Pendências: `interno/decisoes-e-pendencias.mdx`.
 
 ### Royal (`content/loja-integrada/royal/`)
